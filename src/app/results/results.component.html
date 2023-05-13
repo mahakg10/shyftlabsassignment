@@ -1,0 +1,48 @@
+<div class="container mt-4" >
+    <div class="card">
+            <h1>Add Results</h1>
+    
+    <form>
+        <div class="form-group">
+          <label>First Name</label>
+          <select list="FirstNames" type="text" [(ngModel)]="FirstName" [ngModelOptions]="{standalone: true}" class="form-control" id="FirstName" placeholder="Enter First Name"  >
+              <option value={{StudentItem.FirstName}} *ngFor="let StudentItem of StudentArray">{{StudentItem.FirstName}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label>Family Name</label>
+          <select type="text" [(ngModel)]="FamilyName" [ngModelOptions]="{standalone: true}" class="form-control" id="FamilyName" placeholder="Enter Family Name">
+            <option value={{StudentItem.FamilyName}}  *ngFor="let StudentItem of StudentArray">{{StudentItem.FamilyName}}</option>
+          </select>
+        </div>
+      
+        <div class="form-group">
+          <label>Course Name</label>
+          <select type="text" [(ngModel)]="CourseName" [ngModelOptions]="{standalone: true}" class="form-control" id="CourseName" placeholder="Enter Course Name">
+            <option value={{CourseItem.Course}} *ngFor="let CourseItem of CourseArray">{{CourseItem.Course}}</option>
+          </select>
+        </div>
+ 
+        <div class="form-group">
+            <label>Score</label>
+            <select type="text" [(ngModel)]="Score" [ngModelOptions]="{standalone: true}" class="form-control" id="Score" placeholder="Enter Score">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+              <option value="F">F</option>
+            </select>
+            </div>
+ 
+ 
+    
+        <button type="submit" class="btn btn-primary mt-4" (click)="save()" >Save</button>
+      
+      </form>
+    </div>
+</div> 
+  
+    
+       

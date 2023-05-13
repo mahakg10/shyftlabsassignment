@@ -1,0 +1,26 @@
+<div class="container mt-4" >
+    <h1>Results Table</h1>
+<table class="table">
+    <thead>
+     <h1 *ngIf="!isResultLoaded">Loading.................</h1>      
+    <tr>
+        
+        <th scope="col">Student First Name</th>
+        <th scope="col">Student Last Name</th>
+        <th scope="col">Course Name</th>  
+        <th scope="col">Score</th>  
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ResultItem of ResultArray">
+        <td>{{ResultItem.FirstName }}</td>
+        <td>{{ResultItem.FamilyName }}</td>
+        <td>{{ResultItem.Course }}</td>
+        <td>{{ResultItem.Result }}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="setDelete(ResultItem)">Delete</button>            
+        </td>
+      </tr>          
+    </tbody>
+  </table>
+</div>

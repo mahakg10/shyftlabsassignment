@@ -1,0 +1,54 @@
+CREATE DATABASE Student;
+
+Use Student;
+
+CREATE TABLE StudentData(
+
+    StudentID int NOT NULL AUTO_INCREMENT,
+    FirstName varchar(255) NOT NULL,
+    FamilyName varchar(255) NOT NULL,
+    DOB DATE NOT NULL,
+    Email varchar(255) NOT NULL,
+    Primary Key (StudentID)
+
+);
+
+INSERT INTO StudentData (FirstName,FamilyName,DOB,Email) VALUES
+('Mahak', 'Gupta', '1992-07-10','mahak@gmail.com');
+
+
+CREATE TABLE CourseData(
+
+    CourseID int NOT NULL AUTO_INCREMENT,
+    Course varchar(255) NOT NULL,
+    Primary key (CourseID)
+);
+
+INSERT INTO CourseData (Course) VALUES 
+('TestCourse');
+
+
+CREATE TABLE ResultData(
+
+    ResultID int NOT NULL AUTO_INCREMENT,
+    Course varchar(255) NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    FamilyName varchar(255) NOT NULL,
+    Result char NOT NULL,
+    Primary Key (ResultID)
+
+);
+
+INSERT INTO ResultData (Course, FirstName,FamilyName,Result) VALUES 
+('TestCourse','Mahak', 'Gupta','A');
+
+SELECT * FROM StudentData;
+SELECT * FROM CourseData;
+SELECT * FROM ResultData;
+
+DELETE FROM StudentData WHERE FirstName = "" and FamilyName = "";
+DELETE FROM CourseData WHERE Course = "";
+DELETE FRom ResultData WHERE FirstName = "" and FamilyName = "" and Course = "";
+
+DELETE FRom ResultData WHERE 
+FirstName = "Mahak" and FamilyName = "Gupta" and Course = "TestCourse";

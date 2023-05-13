@@ -1,0 +1,23 @@
+<div class="container mt-4" >
+    <h1>Course Table</h1>
+<table class="table">
+    <thead>
+     <h1 *ngIf="!isResultLoaded">Loading.................</h1>      
+    <tr>
+        <!-- <th scope="col">ID</th> -->
+      
+        <th scope="col">Course</th>  
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let CourseItem of CourseArray">
+    
+        <td>{{CourseItem.Course }}</td>
+        
+        <td>
+          <button type="button" class="btn btn-danger" (click)="setDelete(CourseItem)">Delete</button>            
+        </td>
+      </tr>          
+    </tbody>
+  </table>
+</div>
